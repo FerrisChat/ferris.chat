@@ -23,5 +23,5 @@ jobs:
           command: cd /var/www/ferris.chat && sudo git pull
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
-          username: ${{ secrets.USERNAME }}
+          username: ${{ secrets.SSH_USERNAME }}
           privateKey: ${{ secrets.PRIVATE_KEY}}
