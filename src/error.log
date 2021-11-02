@@ -16,3 +16,33 @@ Mon Nov 01 2021 20:42:45 GMT-0600 (Kalliovuorten kesäaika)
 
 Script /home/dustin/Documents/bstd/ferris.chat/git.sh couldn't be run
 
+----------
+
+Tue Nov 02 2021 17:54:41 GMT-0500 (Central Daylight Time)
+
+Script /home/hydro/Documents/ferris.chat/git.sh couldn't be run
+
+----------
+
+Tue Nov 02 2021 17:55:15 GMT-0500 (Central Daylight Time)
+
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
+
+----------
+
+Tue Nov 02 2021 17:55:15 GMT-0500 (Central Daylight Time)
+
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
+
+----------
+
+Tue Nov 02 2021 17:55:15 GMT-0500 (Central Daylight Time)
+
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+
+
