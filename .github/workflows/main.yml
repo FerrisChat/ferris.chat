@@ -20,7 +20,7 @@ jobs:
       - name: pull on web server
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /var/www/ferris.chat && sudo git pull
+          command: sudo -s && cd /var/www/ferris.chat && git pull
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USERNAME }}
