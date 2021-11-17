@@ -27,3 +27,7 @@ async function authAndAcceptInvite() {
             })
         })
 }
+
+document.getElementById('login').onclick = async () => {
+    await authAndAcceptInvite()
+};
