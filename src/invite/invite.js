@@ -35,8 +35,11 @@ async function handleAuthCallback(response) {
 
     let json = await response.json()
 
-    let code = trimTrailingChars(window.location.pathname.split("/").at(-1), "/");
-    await fetch("https://api.ferris.chat/v0/invite" + code, {
+    let path = window.location.pathname;
+    if (path.charAt(path.length - 1) == "/") path = path.substr(0, path.length - 1);
+    path = path.split("/")[-1];
+
+    await fetch("https://api.ferris.chat/v0/invite/" + path, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
