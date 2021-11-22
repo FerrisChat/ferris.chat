@@ -37,7 +37,8 @@ async function handleAuthCallback(response) {
 
     let path = window.location.pathname;
     if (path.charAt(path.length - 1) == "/") path = path.substr(0, path.length - 1);
-    path = path.split("/")[path.length - 1];
+    path = path.split("/");
+    path = path[path.length - 1];
 
     await fetch("https://api.ferris.chat/v0/invite/" + path, {
         method: 'POST',
