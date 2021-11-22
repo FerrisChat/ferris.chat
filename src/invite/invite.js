@@ -1,6 +1,32 @@
-function trimTrailingChars(s, charToTrim) {
-    let regExp = new RegExp(charToTrim + "+$");
-    return s.replace(regExp, "");
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+async function joinGuildOrRedirect() {
+    if (getCookie("token") === "") {
+        // Simulate an HTTP redirect:
+        window.location.replace("https://app.ferris.chat/login");
+    }
+    await fetch("https://api.ferris.chat/v0/invites/" + window.location.pathname.charAt(path.length - 1) == "/", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': getCookie("token")
+        }
+    }).then(handleInviteCallback)
 }
 
 async function handleInviteCallback(response) {
@@ -26,49 +52,3 @@ async function handleInviteCallback(response) {
     document.getElementById("response_status_image").setAttribute("src", alert_image_url);
 }
 
-async function handleAuthCallback(response) {
-    let status = response.status;
-    if (status != 200) {
-        document.getElementById("response_status_text").innerText = "failed to fetch your user token";
-        document.getElementById("response_status_image").setAttribute("src", "https://http.cat" + status);
-    }
-
-    let json = await response.json()
-
-    let path = window.location.pathname;
-    if (path.charAt(path.length - 1) == "/") path = path.substr(0, path.length - 1);
-    path = path.split("/");
-    path = path[path.length - 1];
-
-    await fetch("https://api.ferris.chat/v0/invites/" + path, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': json['token']
-        }
-    }).then(handleInviteCallback)
-}
-
-async function authAndAcceptInvite() {
-    await fetch("https://api.ferris.chat/v0/auth", {
-            method: 'POST',
-            cache: 'no-cache',
-            headers: {
-                'Content-Type': 'application/json',
-                'Email': document.getElementById("email_field").value,
-                'Password': document.getElementById("password_field").value
-            }
-        }
-    )
-        .then(handleAuthCallback)
-}
-
-let loginButton = document.getElementById("login_button");
-if (loginButton === null) {
-    alert("login button is null: this is a bug");
-} else {
-    loginButton.onclick = async () => {
-        await authAndAcceptInvite()
-    }
-}
-;
