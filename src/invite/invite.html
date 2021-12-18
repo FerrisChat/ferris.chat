@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta property="og:title" content="FerrisChat"/>
+    <meta property="og:description" content="A fast and lightweight platform for communities."/>
+    <meta property="og:url" content="https://ferris.chat/"/>
+    <meta
+            property="og:image"
+            content="https://ferris.chat/assets/img/newFerrisLogo.png"/>
+
+    <link rel="icon" type="image/png" href="https://ferris.chat/assets/img/newFerrisLogo.png"/>
+    <link rel="stylesheet" href="https://app.ferris.chat/css/style.css"/>
+    <title>FerrisChat</title>
+</head>
+<body onload="joinGuildOrRedirect()">
+Put in your email and password here to join!<br>
+<input type="text" name="Email" id="email_field"><br>
+<input type="password" name="Password" id="password_field">
+<button id="login_button">Join!</button>
+<br>
+
+<p id="response_status_text"></p>
+<img id="response_status_image" src="" style="height: 50%; width: 50%">
+<script src="./invite.js"></script>
+</body>
+</html>
