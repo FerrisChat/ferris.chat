@@ -228,3 +228,17 @@ To github.com:FerrisChat/ferris.chat.git
    23a40ad..c5560c7  master -> master
 
 
+----------
+
+Sat Dec 18 2021 16:08:55 GMT-0600 (Central Standard Time)
+
+To github.com:FerrisChat/ferris.chat.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'github.com:FerrisChat/ferris.chat.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
